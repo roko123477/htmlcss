@@ -1,14 +1,14 @@
 // min and max radius, radius threshold and percentage of filled circles
 
-var radMin = 10,
-  radMax = 190,
-  filledCircle = 80, //percentage of filled circles
+var radMin = 7,
+  radMax = 170,
+  filledCircle = 60, //percentage of filled circles
   concentricCircle = 70, //percentage of concentric circles
   radThreshold = 60; //IFF special, over this radius concentric, otherwise filled
 
 //min and max speed to move
-var speedMin = 3,
-  speedMax = 7;
+var speedMin = 2,
+  speedMax = 6;
 
 //max reachable opacity for every circle and blur effect
 var maxOpacity = 0.5;
@@ -21,11 +21,11 @@ var colors = ['52,168,83', '117,95,147', '199,108,23', '194,62,55', '0,172,212',
 var backgroundMlt = 0.85;
 
 //min distance for links
-var linkDist = Math.min(canvas.width, canvas.height) / 4.4,
-  lineBorder = 5.5;
+var linkDist = Math.min(canvas.width, canvas.height) / 3.4,
+  lineBorder = 3.5;
 
 //most importantly: number of overall circles and arrays containing them
-var maxCircles = 20,
+var maxCircles = 17,
   points = [],
   pointsBack = [];
 
@@ -35,8 +35,8 @@ for (var i = 0; i < maxCircles; i++) pointsBack.push(new Circle(true));
 
 //experimental vars
 var circleExp = 1,
-  circleExpMax = 2.003,
-  circleExpMin = 1.997,
+  circleExpMax = 1.003,
+  circleExpMin = 0.997,
   circleExpSp = 1.00004,
   circlePulse = false;
 

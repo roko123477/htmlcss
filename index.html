@@ -23,7 +23,7 @@
     />
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
-    
+    <script src="./js/filter.js"></script>
   </head>
   <body>
     <!-- Start your project here-->
@@ -37,39 +37,10 @@
           -webkit-backdrop-filter: blur(3.5px);
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.18);
-          margin-top: 2em;
+          margin-top: 10em;
         "
       >
         <div class="row">
-          <form
-            style="
-              width: 50%;
-              margin: auto;
-              margin-top: 2em;
-              margin-bottom: 2em;
-            "
-          >
-            <div class="dropdown">
-              <button
-                class="btn btn-primary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Search
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">Search By Name</a></li>
-                <li><a class="dropdown-item" href="#">Search By Year</a></li>
-              </ul>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="float: right">
-              Submit
-            </button>
-          </form>
-
           
         <input type="text" name="other_interest" style="display:none" />
 
@@ -84,88 +55,66 @@
             Dummy Table
           </header>
 
-          <table
-            class="table table-hover text-white"
+          <table id="emp-table"
+            class="table text-white"
             style="font-size: 18px; margin: 0 auto; width: 80%"
           >
-            <thead>
+            <thead class="bg-danger">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th col-index = 1 scope="col">#</th>
+                <th col-index = 2 scope="col">Name
+                  <select class="table-filter" onchange="filter_rows()">
+                    <option value="all"></option>
+                </select>
+                </th>
+                <th col-index = 3 scope="col">Year
+                  <select class="table-filter" onchange="filter_rows()">
+                    <option value="all"></option>
+                </select>
+                </th>
+                <th col-index = 4 scope="col">Handle</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
-                <td>Otto</td>
+                <td>2023</td>
                 <td>@mdo</td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td>Jacob</td>
-                <td>Thornton</td>
+                <td>2021</td>
                 <td>@fat</td>
               </tr>
+              
               <tr>
                 <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
                 <td>Mark</td>
-                <td>Otto</td>
+                <td>2022</td>
                 <td>@mdo</td>
               </tr>
               <tr>
                 <th scope="row">5</th>
                 <td>Mark</td>
-                <td>Otto</td>
+                <td>2022</td>
                 <td>@mdo</td>
               </tr>
               <tr>
                 <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                <td>marry</td>
+                <td>2020</td>
                 <td>@mdo</td>
-              </tr>
-              <tr>
+              </tr><tr>
                 <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                <td>muno</td>
+                <td>2023</td>
                 <td>@mdo</td>
-              </tr>
-              <tr>
+              </tr><tr>
                 <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                <td>arko</td>
+                <td>2021</td>
                 <td>@mdo</td>
               </tr>
             </tbody>
@@ -186,7 +135,11 @@
         height="4000px"
       ></canvas>
     </div>
+    <script>
 
+      getUniqueValuesFromColumn()
+      
+  </script>
     <!-- End your project here-->
     <script defer src="./js/script.js"></script>
     <!-- MDB -->
